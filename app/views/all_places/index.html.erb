@@ -1,21 +1,14 @@
-<h1>Places</h1>
+<h1>All Places</h1>
 
-<table class="table table-striped">
-	<tr>
-		<th>Title</th>
-		<th>Image</th>
-		<th>Description</th>
-		<th>Action</th>
-	</tr>
-	<% @places.each do |place| %>
-	<tr>
-		<td><%= place.name %></td>
-		<td><%= image_tag place.image.url(:thumb)%></td>
-		<td><%= place.description %></td>
-		<td>
-			<%= link_to "View", all_place_path(place) %>
-				
-		</td>
-	</tr>
-	<% end %>
-</table>
+
+
+<div class="container">
+  <div class="row">
+    <% @places.each do |place| %>
+    	<div class="col-sm-6 border">
+     		<p><%= link_to place.name, all_place_path(place) %></p>
+	 			<p><%= image_tag place.image.url(:medium)%></p>
+	 		</div>
+   	<% end %>
+  </div>
+</div>
