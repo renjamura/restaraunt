@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  devise_for :users
   resources :cart_items
   resources :carts
   get 'all_places/index'
