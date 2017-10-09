@@ -1,0 +1,8 @@
+﻿
+$("#table-cart tr:last").before("<%= j render @cart_item %>");
+$(".amount_class").val("");
+
+var old_total = parseInt($("#total_id").text());
+var new_total = <%= @cart_item.price * @cart_item.amount %> + old_total;
+
+$("#total_id").text(new_total);

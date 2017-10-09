@@ -1,0 +1,21 @@
+<h1>Places</h1>
+
+<table class="table table-striped">
+	<tr>
+		<th>Title</th>
+		<th>Image</th>
+		<th>Description</th>
+		<th>Action</th>
+	</tr>
+	<% @places.each do |place| %>
+	<tr>
+		<td><%= place.name %></td>
+		<td><%= image_tag "/uploads/#{place.image}", size: "112x180"%></td>
+		<td><%= place.description %></td>
+		<td>
+			<%= link_to "View", all_place_path(place) %>
+				
+		</td>
+	</tr>
+	<% end %>
+</table>

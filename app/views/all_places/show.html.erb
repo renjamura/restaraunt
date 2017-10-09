@@ -1,0 +1,50 @@
+﻿
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag "/uploads/#{@place.image}", size: '100' %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @place.description %>
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <%= render @place.dishes %>
+</table>
+<div id = "cart">
+  <table class="table table-bordered" id = "table-cart">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Amount</th>
+      <th>Total</th>
+      <th>Delete</th>
+    </tr>
+  <% current_cart.cart_items.each do |cart_item| %>
+    <tr>
+      <td><%= cart_item.name %></td>
+      <td><%= cart_item.price %></td>
+      <td><%= cart_item.amount %></td>
+      <td><%= cart_item.pre_total_price %></td>
+      <td><%= link_to 'X', cart_item, method: :delete, data: {confirm: 'Are U Sure?', remote: true} %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <th>Total Price</th>
+      <td id = 'total_id'><%= current_cart.sumtotal %></td>
+    </tr>
+  </table>
+</div>
+<%= link_to 'Back', all_places_index_path %>
