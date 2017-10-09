@@ -10,7 +10,7 @@
 	<% @places.each do |place| %>
 	<tr>
 		<td><%= place.name %></td>
-		<td><%= image_tag "/uploads/#{place.image}", size: "112x180"%></td>
+		<td><%= image_tag place.image.url(:thumb)%></td>
 		<td><%= place.description %></td>
 		<td>
 			<%= link_to "View", all_place_path(place) %>
