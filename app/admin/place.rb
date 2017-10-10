@@ -21,7 +21,15 @@ index do
   actions
 end
 
-
+show do
+  attributes_table do
+    row :name
+    row :image do |img|
+      image_tag img.image.url(:thumb)
+    end
+    row :description
+  end
+end
 
 form do |f|
   f.inputs do

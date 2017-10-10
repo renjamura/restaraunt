@@ -1,6 +1,8 @@
 class AllPlacesController < ApplicationController
+  
+  before_action :authenticate_user!, only:[:show]
   before_action :get_set_cart, only:[:show]
-  before_action :set_place, only: [:show, :get_set_cart]
+  before_action :set_place, only:[:show, :get_set_cart] 
   
   def index
   	@places = Place.all
