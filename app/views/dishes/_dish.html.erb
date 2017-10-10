@@ -7,7 +7,7 @@
     	<div class = 'field'>
     	  <%= form.hidden_field :name, value: dish.name %>
     	  <%= form.hidden_field :price, value: dish.price %>
-    	  <%= form.hidden_field :cart_id, value: current_cart.id %>
+    	  <%= form.hidden_field :cart_id, value: @cart.id %>
     	  <%= form.number_field :amount, {:class => 'amount_class'} %>
     	  <%= form.submit %>
     	</div>

@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-
   # GET /carts
   # GET /carts.json
   def index
@@ -11,8 +10,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
   end
-
-  # GET /carts/new
+ 
   def new
     @cart = Cart.new
   end
@@ -69,6 +67,6 @@ class CartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
-      params.require(:cart).permit(:status)
+      params.require(:cart).permit(:status, :user_id, :place_id)
     end
 end

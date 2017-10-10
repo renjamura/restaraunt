@@ -1,6 +1,7 @@
 class Cart < ApplicationRecord
-  has_many :cart_items
-  belongs_to :user, :place
+  has_many :cart_items, dependent: :destroy
+  belongs_to :user
+  belongs_to :place
   def sumtotal
   	total = 0
     self.cart_items.each do |item|
