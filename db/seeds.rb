@@ -15,9 +15,9 @@
 	place_second = Place.create(name:"KFC",description:"Kyrgyz fried chicken",image: File.new("public/uploads/kfc.jpg"))
 
 
-	dish_first = Dish.create(name:"Plov",price:"200",description:"fried rice",place_id:place_first)
-	dish_second = Dish.create(name:"Manty",price:"50",description:"dumplinks",place_id:place_first)
-	dish_third = Dish.create(name:"Chai",price:"40",description:"ceylon tea",place_id:place_first)
+	dish_first = Dish.create(name:"Plov",price:"200",description:"fried rice",place_id:place_first.id)
+	dish_second = Dish.create(name:"Manty",price:"50",description:"dumplinks",place_id:place_first.id)
+	dish_third = Dish.create(name:"Chai",price:"40",description:"ceylon tea",place_id:place_first.id)
 
-	dish_forth = Dish.create(name:"Burger",price:"120",description:"chicken burger",place_id:place_second)
-	dish_fifth = Dish.create(name:"Pizza",price:"230",description:"chicken pizza",place_id:place_second)
+	dish_forth = Dish.create(name:"Burger",price:"120",description:"chicken burger",place_id:place_second.id)
+	dish_fifth = Dish.create(name:"Pizza",price:"230",description:"chicken pizza",place_id:place_second.id)
