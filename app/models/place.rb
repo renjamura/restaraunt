@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
-  has_many :dishes
-  has_one :cart
+  has_many :dishes, dependent: :destroy
+  has_one :cart, dependent: :destroy
 
   has_attached_file :image,
                     styles: { medium: '300x300>', thumb: '100x100>'},
